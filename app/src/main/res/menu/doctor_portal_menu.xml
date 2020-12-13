@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_guardian_request"
+        android:icon="@drawable/guardian_request"
+        android:title="Guardian Requests"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_patient_request"
+        android:icon="@drawable/patient_request"
+        android:title="Patient Requests"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_refresh"
+        android:title="Refresh"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_ecghistory"
+        android:title="ECG Data"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_hrmhistory"
+        android:title="HRM Data"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_temphistory"
+        android:title="TEMP Data"
+        app:showAsAction="never"/>
+
+</menu>

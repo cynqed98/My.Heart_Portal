@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_add"
+        android:icon="@drawable/patient_add"
+        android:title="Add Room"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_view_offline"
+        android:title="View Saved Data"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_update"
+        android:title="Update Saved Data"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_resend"
+        android:title="Email Verification"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_view_profile"
+        android:title="View Online Profile"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_logout"
+        android:title="Sign out"
+        app:showAsAction="never"/>
+
+</menu>

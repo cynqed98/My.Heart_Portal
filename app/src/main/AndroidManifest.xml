@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myheartportal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".MyHeartPortalApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/myheart_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/myheart_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".room_ui.RoomHistoryTEMP"></activity>
+        <activity android:name=".room_ui.RoomHistoryHRM" />
+        <activity android:name=".room_ui.RoomHistoryECG" />
+        <activity
+            android:name=".guardian.GuardianProfileUpdate"
+            android:label="Guardian" />
+        <activity
+            android:name=".doctor.DoctorProfileUpdate"
+            android:label="Doctor" />
+        <activity
+            android:name=".patient.PatientProfileUpdate"
+            android:label="Patient" />
+        <activity
+            android:name=".doctor.DoctorProfileView"
+            android:label="Doctor" />
+        <activity
+            android:name=".guardian.GuardianProfileView"
+            android:label="Guardian" />
+        <activity
+            android:name=".patient.PatientProfileView"
+            android:label="Patient" />
+        <activity
+            android:name=".room_ui.RoomportalMain"
+            android:label="@string/title_activity_roomportal_main" />
+        <activity
+            android:name=".patient.PatientRoomList"
+            android:label="Rooms" />
+        <activity
+            android:name=".room_ui.RoomRequests"
+            android:label="Requests" />
+
+        <service
+            android:name=".patient.PatientBackWorker"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".guardian.GuardianRoomList"
+            android:label="Rooms" />
+        <activity
+            android:name=".guardian.GuardianRegister"
+            android:label="Guardian" />
+        <activity
+            android:name=".doctor.DoctorRoomList"
+            android:label="Rooms" />
+        <activity
+            android:name=".doctor.DoctorRegister"
+            android:label="Doctor" />
+        <activity
+            android:name=".patient.PatientRegister"
+            android:label="Patient" />
+        <activity android:name=".LogInChooser" />
+        <activity
+            android:name=".patient.PatientMain"
+            android:label="Patient" />
+        <activity
+            android:name=".patient.PatientDetails"
+            android:label="Patient" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

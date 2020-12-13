@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "301396197345",
+    "firebase_url": "https://myheart-portal-8783d.firebaseio.com",
+    "project_id": "myheart-portal-8783d",
+    "storage_bucket": "myheart-portal-8783d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301396197345:android:90ee78c304f784747a1ca0",
+        "android_client_info": {
+          "package_name": "com.example.myheartportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301396197345-hiitj1f0mous6ojl2i4u9a2r4smelnt7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myheartportal",
+            "certificate_hash": "6c1cabdc1d93f1b2454e034a30e0e8b33bd4ffd0"
+          }
+        },
+        {
+          "client_id": "301396197345-fr9r2s1tt1136lkr53s330cts8e6b9le.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKfy1K03nfNtFLOM1LEBU6vzXeQvi1VEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301396197345-fr9r2s1tt1136lkr53s330cts8e6b9le.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

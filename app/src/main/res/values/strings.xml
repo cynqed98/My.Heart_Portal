@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My.Heart Portal</string>
+    <!--    <string name="doctor">doctor</string>-->
+    <!--    <string name="patient">patient</string>-->
+    <!--    <string name="guardian">guardian</string>-->
+    <string name="title_activity_roomportal_main">Room Portal</string>
+</resources>
