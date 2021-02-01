@@ -167,10 +167,8 @@ public class PatientUploadECG extends Worker
     private void uploadECG(String[] tokens, String fileTitle, double high_rr, String high_rrtime, int row, String encpassword)
     {
         DatabaseReference mDatabaseECG = mDatabaseReadings.child("ECG").child(fileTitle);
-
         String encdate = null, encfiltered = null, encraw = null, encaverage = null, enccurrent = null;
         SecureEncryption secureEncryption = new SecureEncryption();
-
         try {
             encdate = secureEncryption.encryptData(tokens[0], encpassword);
             encfiltered = secureEncryption.encryptData(tokens[2], encpassword);
@@ -181,11 +179,8 @@ public class PatientUploadECG extends Worker
             e.printStackTrace();
             Log.d(tag, e.toString());
         }
-
         PointValueEncECG pointValueEncECG = new PointValueEncECG(encdate, encraw, encfiltered, encaverage, enccurrent);
-
         mDatabaseECG.child("ecgdata").child(String.valueOf(row)).setValue(pointValueEncECG);
-
         String enchighrr = null, encrrtime = null;
         try {
             enchighrr = secureEncryption.encryptData(String.valueOf(high_rr), encpassword);
@@ -195,7 +190,6 @@ public class PatientUploadECG extends Worker
         }
         mDatabaseECG.child("high_rr").child("rr").setValue(enchighrr); //For Highest R-to-R
         mDatabaseECG.child("high_rr").child("time").setValue(encrrtime); //For the time of highest R-to-R
-
         if (!dataUploaded)
         {
             dataUploaded = true;
