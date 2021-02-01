@@ -94,35 +94,20 @@ public class PatientUploadECG extends Worker
             while ((line = bufferedReader.readLine()) != null)
             {
                 String[] tokens = line.split(","); //split by commas
-
                 if (Double.parseDouble(tokens[6]) >= high_rr) //Get highest RR
                 {
                     high_rr = Double.parseDouble(tokens[6]);
                     high_rrtime = tokens[0];
-
                     if (high_rr >= threshhold_RR)
                     {
                         outputData = new Data.Builder().putBoolean(TRIGGER_SMS, true).build();
                     }
                 }
-
                 if (!TextUtils.isEmpty(patient_id)) //Upload ECG
                 {
                     uploadECG (tokens, fileName, high_rr, high_rrtime, row, patient_id);
                 }
-                //************************ SKIP
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                bufferedReader.readLine();
-                //************************ SKIP
-
+                skipLines(bufferedReader);
                 row = row + 1;
             }
         } catch (IOException e) {
@@ -157,6 +142,24 @@ public class PatientUploadECG extends Worker
             {
                 dataUploaded = false;
             }
+        }
+    }
+
+    private void skipLines(BufferedReader bufferedReader)
+    {
+        try {
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+            bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
