@@ -518,11 +518,13 @@ public class PatientMain extends AppCompatActivity {
         startService(watchIntent);
 
         try {
-            Intent maximIntent = getPackageManager().getLaunchIntentForPackage("com.maximintegrated.hsp.maxrefdes101");
+            Intent maximIntent = getPackageManager()
+                    .getLaunchIntentForPackage("com.maximintegrated.hsp.maxrefdes101");
             startActivity(maximIntent);
         }catch (ActivityNotFoundException | NullPointerException e)
         {
-            Toast.makeText(this, "MAXIM app is not installed.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "MAXIM app is not installed.", Toast.LENGTH_SHORT)
+                    .show();
         }
     }
 

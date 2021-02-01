@@ -78,9 +78,7 @@ public class PatientBackWorker extends LifecycleService implements LifecycleOwne
     public int onStartCommand(Intent intent, int flags, int startId)
     {
         super.onStartCommand(intent, flags, startId);
-
         phoneNumbers = intent.getStringArrayExtra(PHONE_NUMBERS); //name then phone nos.
-
         Intent notificationIntent = new Intent(this, PatientMain.class)
                 .putExtra(SERVICE_START, true)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -88,28 +86,21 @@ public class PatientBackWorker extends LifecycleService implements LifecycleOwne
                 UUID.randomUUID().hashCode(),
                 notificationIntent.putExtra(SERVICE_START, true),
                 PendingIntent.FLAG_UPDATE_CURRENT);
-
         mCurrentUser = mAuth.getCurrentUser();
         mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
                 mCurrentUser = firebaseAuth.getCurrentUser();
-
                 if (firebaseAuth.getCurrentUser() != null) {
                     firebaseAuth.getCurrentUser().reload();
-
                     displayServiceNotification("Started observing the patient's data.");
                 } else {
-
                     displayServiceNotification("User is not online. Only SMS feature works.");
                 }
                 startForeground(1, notification);
             }
         });
-
         startWatching();
-
         return START_STICKY;
     }
 
