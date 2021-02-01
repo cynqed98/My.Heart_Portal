@@ -110,7 +110,6 @@ public class PatientUploadECG extends Worker
                 {
                     uploadECG (tokens, fileName, high_rr, high_rrtime, row, patient_id);
                 }
-
                 //************************ SKIP
                 bufferedReader.readLine();
                 bufferedReader.readLine();
