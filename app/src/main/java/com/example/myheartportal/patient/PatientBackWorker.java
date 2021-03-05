@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.FileObserver;
 import android.os.IBinder;
 import android.telephony.SmsManager;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -122,7 +123,8 @@ public class PatientBackWorker extends LifecycleService implements LifecycleOwne
             @Override
             public void onEvent(int event, @Nullable String path) {
 
-                if (event == FileObserver.MODIFY || event == FileObserver.CLOSE_WRITE)
+                //removed condition "event == FileObserver.MODIFY" as it triggers multiple times
+                if (event == FileObserver.CLOSE_WRITE)
                 {
                     if (path != null)
                     {

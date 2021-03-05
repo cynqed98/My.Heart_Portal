@@ -341,7 +341,7 @@ public class PatientRegister extends AppCompatActivity {
                                  final String date_of_birth, final String own_phone, final String mail, String password)
     {
         spotsDialog.show();
-        if (cbMail.isChecked()) //verify by mail
+        if (cbMail.isChecked())
         {
             mAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(PatientRegister.this,
             new OnCompleteListener<AuthResult>() {
@@ -362,12 +362,12 @@ public class PatientRegister extends AppCompatActivity {
                                                 .execute(first_name, middle_name, last_name, date_of_birth, own_phone, mail);
                                     } else {
                                         if (task.getException() != null)
-                                            Toast.makeText(PatientRegister.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(PatientRegister.this, task.getException()
+                                                    .getMessage(), Toast.LENGTH_SHORT).show();
                                         spotsDialog.dismiss();
                                     }
                                 }
                             });
-
                         } else {
                             spotsDialog.dismiss();
                         }
@@ -383,7 +383,7 @@ public class PatientRegister extends AppCompatActivity {
                     spotsDialog.dismiss();
                 }
             });
-        } else if (cbPhone.isChecked()) //SMS VERIFICATION
+        } else if (cbPhone.isChecked()) //not implemented
         {
             Toast.makeText(this, "Verification by phone not yet implemented.", Toast.LENGTH_SHORT).show();
             spotsDialog.dismiss();

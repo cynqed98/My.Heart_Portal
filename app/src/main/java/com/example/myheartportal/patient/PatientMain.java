@@ -416,7 +416,6 @@ public class PatientMain extends AppCompatActivity {
                             etRoomCode.setError("The room already has a patient inside.");
                         }
                         else {
-
                             String doctor_id = (String) data.child(room_code).child("doctor_id").getValue();
                             if (!TextUtils.isEmpty(doctor_id))
                             {
@@ -455,7 +454,8 @@ public class PatientMain extends AppCompatActivity {
                                     }
                                 });
                             } else {
-                                Toast.makeText(PatientMain.this, "Cannot identify the room's doctor.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PatientMain.this, "Cannot identify the room's doctor.",
+                                        Toast.LENGTH_SHORT).show();
                             }
                         }
                         roomExists = true;

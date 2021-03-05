@@ -318,7 +318,7 @@ public class LogInChooser extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "You entered an invalid email or phone number.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You entered an invalid email.", Toast.LENGTH_SHORT).show();
             spotsDialog.dismiss();
         }
     }
