@@ -35,13 +35,10 @@ public class SecureEncryption
         IvParameterSpec ivParams = new IvParameterSpec(iv);
         cipher.init(Cipher.ENCRYPT_MODE, key, ivParams);
         byte[] ciphertext = cipher.doFinal(Data.getBytes("UTF-8"));
-
         String saltStr = Base64.encodeToString(salt, Base64.DEFAULT);
         String ivStr = Base64.encodeToString(iv, Base64.DEFAULT);
         String cipherStr = Base64.encodeToString(ciphertext, Base64.DEFAULT);
-
         String concatStr = saltStr + "]" + ivStr + "]" + cipherStr;
-
         return concatStr;
     }
 
