@@ -90,7 +90,8 @@ public class PatientUploadECG extends Worker
             String line = "";
             double high_rr = 0.0;
             String high_rrtime = "";
-            double threshhold_RR = 120.0; //tentative value
+            double threshhold_highRR = 110.0; //tentative value
+            double threshhold_lowRR = 50.0;
             while ((line = bufferedReader.readLine()) != null)
             {
                 String[] tokens = line.split(","); //split by commas
@@ -98,7 +99,7 @@ public class PatientUploadECG extends Worker
                 {
                     high_rr = Double.parseDouble(tokens[6]);
                     high_rrtime = tokens[0];
-                    if (high_rr >= threshhold_RR)
+                    if (high_rr >= threshhold_highRR)
                     {
                         outputData = new Data.Builder().putBoolean(TRIGGER_SMS, true).build();
                     }

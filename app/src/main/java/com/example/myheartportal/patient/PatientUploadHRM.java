@@ -94,7 +94,8 @@ public class PatientUploadHRM extends Worker
             long high_bpmtime = 0;
             double high_bpmconf = 0.0;
             String high_bpmact = "";
-            double threshold_bpm = 120.0;
+            double threshold_highbpm = 110.0; //tentative value
+            double threshhold_lowbpm = 50.0;
             while ((line = bufferedReader.readLine()) != null)
             {
                 String[] tokens = line.split(","); //split by commas
@@ -106,7 +107,7 @@ public class PatientUploadHRM extends Worker
                     high_bpmconf = Double.parseDouble(tokens[7]);
                     high_bpmact = tokens[8];
 
-                    if (high_bpm >= threshold_bpm)
+                    if (high_bpm >= threshold_highbpm)
                     {
                         outputData = new Data.Builder().putBoolean(TRIGGER_SMS, true).build();
                     }
