@@ -20,6 +20,7 @@ public class SecureEncryption
     //***********************************************************
     //AES CBC MODE --------------****
     //Enable or disable by Ctrl + Shift + / on the whole code below until ENDcode
+    //Note: one of the two mode must be enabled
 
     /*private final String algorithm = "AES/CBC/PKCS5Padding";
     private final int iterationCount = 1000;
