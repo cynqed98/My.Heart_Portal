@@ -22,7 +22,9 @@ public class SecureEncryption
     //Enable or disable by Ctrl + Shift + / on the whole code below until ENDcode
     //Note: one of the two mode must be enabled
 
-    private final String algorithm = "AES/CBC/PKCS5Padding";
+    ////---------------CBC-mode STARTcode****
+
+    /*private final String algorithm = "AES/CBC/PKCS5Padding";
     private final int iterationCount = 1000;
     private final int keyLength = 256;
     int saltLength = keyLength / 8;
@@ -69,7 +71,8 @@ public class SecureEncryption
         String plainStr = new String(plaintext, "UTF-8");
 
         return plainStr;
-    }
+    }*/
+
     ////---------------CBC-mode ENDcode****
 
     //***********************************************************
@@ -77,7 +80,9 @@ public class SecureEncryption
     //AES EBC MODE (high performance than CBC mode------**
     //Enable or disable by Ctrl + Shift + / on the whole code below until ENDcode
 
-    /*private final String algorithm = "AES";
+    ////-------------EBC-mode STARTcode****
+
+    private final String algorithm = "AES";
     public String encryptData(String Data, String password) throws Exception
     {
         SecretKeySpec key = generateKey(password);
@@ -102,6 +107,7 @@ public class SecureEncryption
         byte[] decodedValue = Base64.decode(encData, Base64.DEFAULT);
         byte[] decValue = c.doFinal(decodedValue);
         return new String(decValue);
-    }*/
+    }
+
     ////-------------EBC-mode ENDcode****
 }
